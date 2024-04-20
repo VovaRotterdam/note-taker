@@ -93,6 +93,12 @@ input {
   color: rgb(12, 12, 12);
   padding: auto;
 }
+.text_inside2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  color: rgb(255, 0, 0);
+  padding: auto;
+}
 
 .new_note_style {
   /* text-overflow: ellipsis;
