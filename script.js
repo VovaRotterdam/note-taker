@@ -21,18 +21,22 @@ Add_Note.addEventListener("click", (e) => {
   const check_box = document.createElement("input");
   check_box.type = "checkbox";
   check_box.classList.add("checkbox");
-  // note_text.classList.add("text_inside");
-  // note_text.innerHTML = short_text;
 
   // create button "view detail"
   const view_detail = document.createElement("button");
   view_detail.innerHTML = "View Detail";
   view_detail.classList.add("button");
 
+  // create button "remove"
+  const remove_note = document.createElement("button");
+  remove_note.innerHTML = "Delete";
+  remove_note.classList.add("button_delete");
+
   // create note with all components
   field_notes.appendChild(new_note);
   new_note.appendChild(note_text);
   new_note.appendChild(view_detail);
+  new_note.appendChild(remove_note);
   new_note.appendChild(check_box);
 
   text_input.value = "";
@@ -46,6 +50,7 @@ Add_Note.addEventListener("click", (e) => {
   view_detail.addEventListener("click", function (e) {
     e.preventDefault();
     new_note.removeChild(view_detail);
+    new_note.removeChild(remove_note);
     note_text.innerHTML = full_text;
     new_note.appendChild(but_rem);
     new_note.classList.add("active");
@@ -56,7 +61,13 @@ Add_Note.addEventListener("click", (e) => {
     new_note.classList.remove("active");
     note_text.innerHTML = short_text;
     new_note.appendChild(view_detail);
+    new_note.appendChild(remove_note);
     new_note.appendChild(check_box);
     new_note.removeChild(but_rem);
+  });
+  //open full text
+  remove_note.addEventListener("click", function (e) {
+    e.preventDefault();
+    field_notes.removeChild(new_note);
   });
 });
