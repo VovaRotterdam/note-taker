@@ -51,6 +51,7 @@ Add_Note.addEventListener("click", (e) => {
     e.preventDefault();
     new_note.removeChild(view_detail);
     new_note.removeChild(remove_note);
+    new_note.removeChild(check_box);
     note_text.innerHTML = full_text;
     new_note.appendChild(but_rem);
     new_note.classList.add("active");
